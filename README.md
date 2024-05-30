@@ -1,6 +1,6 @@
-# Photography Portfolio
+# PixelArrays
 
-Welcome to my photography portfolio! This is a personal hobby website where I showcase the images I've captured. Through my lens, I strive to capture the essence of life, from captivating landscapes to emotive portraits. Join me on this visual journey and explore moments frozen in time.
+Welcome to PixelArrays! This is a personal hobby website where I showcase the images I've captured. Through my lens, I strive to capture the essence of life, from captivating landscapes to emotive portraits. Join me on this visual journey and explore moments frozen in time.
 
 ## Features
 
@@ -18,11 +18,11 @@ Welcome to my photography portfolio! This is a personal hobby website where I sh
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/photography-portfolio.git
+    git clone https://github.com/neutrino225/pixelarrays.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd photography-portfolio
+    cd pixelarrays
     ```
 3. Install dependencies:
     ```sh
