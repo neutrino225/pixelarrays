@@ -1,4 +1,21 @@
 /** @format */
+.section {
+	padding: 5rem 1rem;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: #212124;
+}
+
+.title {
+	font-size: 2.3rem;
+	font-weight: 400;
+	margin-bottom: 1rem;
+	color: #fff;
+}
 
 .gallery {
 	width: 90%;
@@ -35,10 +52,14 @@
 .galleryitem:hover ~ .galleryitem .galleryimg {
 	transform: scale(0.95);
 	transition: transform 0.5s;
-	filter: brightness(0.8); 
+	filter: brightness(0.8);
 }
 
 @media screen and (max-width: 1440px) {
+	.title {
+		font-size: 2rem;
+	}
+
 	.gallery {
 		grid-template-columns: repeat(2, minmax(300px, 1fr));
 		grid-template-rows: repeat(4, minmax(300px, 1fr));
@@ -46,6 +67,21 @@
 }
 
 @media screen and (max-width: 1024px) {
+	.title {
+		font-size: 1.8rem;
+	}
+	.gallery {
+		grid-template-columns: repeat(1, minmax(300px, 1fr));
+		grid-template-rows: repeat(6, minmax(300px, 1fr));
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.title {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
 	.gallery {
 		grid-template-columns: repeat(1, minmax(300px, 1fr));
 		grid-template-rows: repeat(6, minmax(300px, 1fr));

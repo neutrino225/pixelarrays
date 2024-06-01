@@ -1,0 +1,29 @@
+/** @format */
+
+.scrolltop {
+	position: fixed;
+	bottom: 50px;
+	right: 20px;
+	z-index: 1000;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	background-color: #fff;
+	border: none;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s;
+	padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+	.scrolltop {
+		bottom: 10px;
+		right: 10px;
+		width: 30px;
+		height: 30px;
+	}
+}
