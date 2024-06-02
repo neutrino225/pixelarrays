@@ -42,13 +42,22 @@ const Gallery = () => {
 
 	return (
 		// create mansonary grid
+
 		<section className={styles.section}>
 			<h2 className={styles.title}>
 				Relive the memories I&apos;ve captured through my lens
 			</h2>
-			<motion.div className={styles.gallery} ref={ref} variants={gridContainerVariants} initial="hidden" animate={controls}>
+			<motion.div
+				className={styles.gallery}
+				ref={ref}
+				variants={gridContainerVariants}
+				initial="hidden"
+				animate={controls}>
 				{images.map((image, index) => (
-					<motion.div key={index} className={styles.galleryitem} variants={gridItemVariants}>
+					<motion.div
+						key={index}
+						className={styles.galleryitem}
+						variants={gridItemVariants}>
 						<Image
 							src={image}
 							alt="Gallery Image"
