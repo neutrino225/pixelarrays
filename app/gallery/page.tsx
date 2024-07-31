@@ -56,9 +56,14 @@ const Gallery = () => {
 				{selectedImage && (
 					<motion.div
 						key="modal"
-						className="fixed inset-0 flex items-center justify-center bg-black/90 max-md:p-5"
+						className="fixed inset-0 flex items-center justify-center bg-black/20 transition-colors duration-1000 backdrop-blur-md max-md:p-5"
 						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
+						animate={{
+							opacity: 1,
+							transition: {
+								duration: 0.5,
+							},
+						}}
 						exit={{ opacity: 0 }}
 						onClick={() => setSelectedId(null)}>
 						<motion.div
