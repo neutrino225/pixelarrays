@@ -1,12 +1,12 @@
 /** @format */
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-const images = Array.from({ length: 36 }, (_, index) => ({
+const images = Array.from({ length: 35 }, (_, index) => ({
 	id: (index + 1).toString(),
 	src: `/images/${index + 1}.JPG`,
 	alt: `Gallery image ${index + 1}`,
@@ -19,10 +19,24 @@ const Gallery = () => {
 	const selectedImage = images.find((img) => img.id === selectedId);
 
 	return (
-		<section className="relative w-full min-h-screen p-10 md:p-24 bg-[#0a0a0c]">
-			<div className="absolute top-5 left-5">
-				<Link href="/" className="text-white">
-					Back to homepage
+		<section className="relative w-full min-h-screen p-10 md:p-24 bg-zinc-100">
+			<div className="absolute top-5 left-5 bg-slate-300 px-5 py-2 rounded-full">
+				<Link
+					href="/"
+					className="text-zinc-900 flex gap-1 justify-center items-center">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width={20}
+						height={20}
+						viewBox="0 0 1024 1024">
+						<path
+							fill="currentColor"
+							d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64"></path>
+						<path
+							fill="currentColor"
+							d="m237.248 512l265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312z"></path>
+					</svg>
+					<p className="text-zinc-900">Back to homepage</p>
 				</Link>
 			</div>
 			<div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
@@ -56,19 +70,17 @@ const Gallery = () => {
 				{selectedImage && (
 					<motion.div
 						key="modal"
-						className="fixed inset-0 flex items-center justify-center bg-black/20 transition-colors duration-1000 backdrop-blur-md max-md:p-5"
-						initial={{ opacity: 0 }}
+						className="fixed inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm max-md:p-5"
 						animate={{
-							opacity: 1,
 							transition: {
 								duration: 0.5,
+								ease: [0.76, 0, 0.24, 1],
 							},
 						}}
-						exit={{ opacity: 0 }}
 						onClick={() => setSelectedId(null)}>
 						<motion.div
 							layoutId={selectedImage.id}
-							className="relative max-w-full max-h-full bg-transparent rounded-lg flex items-center justify-center"
+							className="relative max-w-full max-h-full bg-transparent flex items-center justify-center"
 							onClick={(e) => e.stopPropagation()}>
 							<Image
 								src={selectedImage.src}
